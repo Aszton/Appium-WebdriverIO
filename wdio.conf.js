@@ -25,7 +25,9 @@ exports.config = {
   // then the current working directory is where your `package.json` resides, so `wdio`
   // will be called from there.
   //
-  specs: ["test/specs/**/*.js"],
+
+  // specs: ["test/specs/**/*.js"],
+  specs: ["test/specs/myTest.spec.js"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -47,6 +49,7 @@ exports.config = {
   // from the same test should run tests.
   //
   maxInstances: 10,
+
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -55,12 +58,14 @@ exports.config = {
   capabilities: [
     {
       "appium:platformName": "Android",
-      "appium:platformVersion": "10.0",
+      "appium:platformVersion": "10",
       "appium:deviceName": "Pixel 3",
-      "appium:automationName": "UIautomator2",
-      "appium:app": path.join(process.cwd(), "app/android/ApiDemos-debug.apk"),
+      "appium:automationName": "UiAutomator2",
+      "appium:app": path.join(process.cwd(), "app/android/ColorNote.apk"),
+      "appium:autoGrantPermissions": true,
     },
   ],
+  acceptInsecureCerts: true,
   //
   // ===================
   // Test Configurations
@@ -108,7 +113,19 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["appium"],
+  services: [
+    [
+      "appium",
+      {
+        args: {
+          address: "localhost",
+          port: 4723,
+          relaxedSecurity: true,
+        },
+        logPath: "./",
+      },
+    ],
+  ],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
