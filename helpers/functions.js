@@ -15,4 +15,5 @@ class action {
     await $(selector).getText();
   }
 }
+
 export default new action();

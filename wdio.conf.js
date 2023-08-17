@@ -1,4 +1,5 @@
 const path = require("path");
+// import path from "path";
 
 exports.config = {
   //
@@ -9,6 +10,7 @@ exports.config = {
   runner: "local",
 
   port: 4723,
+  path: "/",
   //
   // ==================
   // Specify Test Files
@@ -27,7 +29,7 @@ exports.config = {
   //
 
   // specs: ["test/specs/**/*.js"],
-  specs: ["test/specs/myTest.spec.js"],
+  specs: ["test/specs/android-noteColor.spec.js"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'
@@ -58,11 +60,12 @@ exports.config = {
   capabilities: [
     {
       "appium:platformName": "Android",
-      "appium:platformVersion": "10",
+      "appium:platformVersion": "10.0",
+      "appium:udid": "emulator-5554",
       "appium:deviceName": "Pixel 3",
       "appium:automationName": "UiAutomator2",
-      "appium:app": path.join(process.cwd(), "app/android/ColorNote.apk"),
       "appium:autoGrantPermissions": true,
+      "appium:app": path.join(process.cwd(), "app/android/ColorNote.apk"),
     },
   ],
   acceptInsecureCerts: true,
@@ -97,7 +100,8 @@ exports.config = {
   // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
   // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
   // gets prepended directly.
-  baseUrl: "http://localhost",
+
+  // baseUrl: "http://localhost",
   //
   // Default timeout for all waitFor* commands.
   waitforTimeout: 10000,
