@@ -3,9 +3,9 @@ import { value } from "../../helpers/input";
 import { selectors } from "../../helpers/selectors";
 import noteObjects from "../../helpers/pageObjects";
 
-describe("My Tests", () => {
-  it("My tests", async () => {
-    await noteObjects.skipTutorial();
+describe("Color note test", () => {
+  it("Add a note and delete it", async () => {
+    noteObjects.skipTutorial();
     await action.click(selectors.addNoteText);
     await action.click(selectors.textOption);
     await action.isDisplayed(selectors.textEditing);
@@ -22,5 +22,9 @@ describe("My Tests", () => {
     await action.click(selectors.iconNavigation);
     await action.click(selectors.buttonTrash);
     await action.checkText(selectors.firstNote, value.tv);
+    await driver.closeApp();
+  });
+  afterEach(async () => {
+    await driver.closeApp();
   });
 });
