@@ -3,7 +3,7 @@ const path = require("path");
 const { config } = require("./wdio.shared.conf");
 
 config.user = process.env.BROWSERSTACK_USER;
-config.key = process.env.BROWSERSTACK_KEY;
+config.key = process.env.BROWSERSTACK_PASSWORD;
 
 config.specs = [
   path.join(process.cwd(), "./test/specs/android-noteColor.spec.js"),
