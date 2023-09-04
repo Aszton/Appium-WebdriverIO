@@ -1,0 +1,26 @@
+name: CI
+env:
+  BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+  BROWSERSTACK_PASSWORD: ${{ secrets.BROWSERSTACK_PASSWORD }}
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 20.4.0
+        - name: Install
+          run: npm install
+        - name: Test
+          env:
+            BROWSERSTACK_USER: ${{ secrets.BROWSERSTACK_USER }}
+            BROWSERSTACK_PASSWORD: ${{ secrets.BROWSERSTACK_PASSWORD }}
+          run: npx wdio config/wdio.browserstack-android.conf.js --spec test/specs/android-noteColor.spec.js
+        - uses: actions/upload-artifact@v1
+          if: failure()
+          with:
+            name: logs
+            path: logs
