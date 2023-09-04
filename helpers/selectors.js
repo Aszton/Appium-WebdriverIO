@@ -18,3 +18,15 @@ export const selectors = {
   buttonEdit:
     '//*[@resource-id="com.socialnmobile.dictapps.notepad.color.note:id/edit_btn"]',
 };
+
+export const selectorsForApiDemos = {
+  animation: "~Animation",
+  defaultLayoutAnimations: "~Default Layout Animations",
+  addButton: "~Add Button",
+};
+
+export const sauceLabsSelectors = {
+  inputUserName: "~test-Username",
+  inputPassword: "~test-Password",
+  buttonLogin: "~test-LOGIN",
+};

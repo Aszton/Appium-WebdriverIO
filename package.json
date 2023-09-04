@@ -20,6 +20,7 @@
     "wdio": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
-    "appium-espresso-driver": "^2.15.3"
+    "appium-espresso-driver": "^2.15.3",
+    "dotenv": "^16.3.1"
   }
 }
