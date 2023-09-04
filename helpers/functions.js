@@ -1,4 +1,4 @@
-class action {
+class Action {
   async click(selector) {
     await $(selector).click();
   }
@@ -16,4 +16,4 @@ class action {
   }
 }
 
-export default new action();
+export default new Action();

@@ -1,4 +1,4 @@
-import action from "../../helpers/functions";
+import Action from "../../helpers/functions";
 import { value } from "../../helpers/input";
 import { selectors } from "../../helpers/selectors";
 import noteObjects from "../../helpers/pageObjects";
@@ -6,23 +6,22 @@ import noteObjects from "../../helpers/pageObjects";
 describe("Color note test", () => {
   it("Add a note and delete it", async () => {
     noteObjects.skipTutorial();
-    await action.click(selectors.addNoteText);
-    await action.click(selectors.textOption);
-    await action.isDisplayed(selectors.textEditing);
-    await action.type(selectors.noteHeading, value.tv);
-    await action.type(selectors.noteBody, value.serials);
+    await Action.click(selectors.addNoteText);
+    await Action.click(selectors.textOption);
+    await Action.isDisplayed(selectors.textEditing);
+    await Action.type(selectors.noteHeading, value.tv);
+    await Action.type(selectors.noteBody, value.serials);
     await driver.back();
     await driver.back();
-    await action.isDisplayed(selectors.buttonEdit);
+    await Action.isDisplayed(selectors.buttonEdit);
     await driver.back();
-    await action.click(selectors.firstNote);
-    await action.click(selectors.iconMore);
-    await action.click(selectors.iconDelete);
+    await Action.click(selectors.firstNote);
+    await Action.click(selectors.iconMore);
+    await Action.click(selectors.iconDelete);
     await driver.acceptAlert();
-    await action.click(selectors.iconNavigation);
-    await action.click(selectors.buttonTrash);
-    await action.checkText(selectors.firstNote, value.tv);
-    await driver.closeApp();
+    await Action.click(selectors.iconNavigation);
+    await Action.click(selectors.buttonTrash);
+    await Action.checkText(selectors.firstNote, value.tv);
   });
   afterEach(async () => {
     await driver.closeApp();
