@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"4b103b30fdacc3baa91607990f0d0fdf","name":"Swag Labs tests","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}}]}
+{"total":2,"items":[{"uid":"4b103b30fdacc3baa91607990f0d0fdf","name":"Swag Labs tests","statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1}},{"uid":"1a59a7c56ea2b740807930f1eaf9f4c7","name":"Color note test","statistic":{"failed":0,"broken":0,"skipped":0,"passed":0,"unknown":1,"total":1}}]}
