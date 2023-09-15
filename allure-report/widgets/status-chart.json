@@ -1,1 +1,1 @@
-[{"uid":"76cb033ad3272f34","name":"Login","time":{"start":1694775455706,"stop":1694775459902,"duration":4196},"status":"passed","severity":"normal"}]
+[{"uid":"551826227dcc3186","name":"Login","time":{"start":1694775455706,"stop":1694775459902,"duration":4196},"status":"passed","severity":"normal"},{"uid":"90f571ac59bc6cf","name":"Add a note and delete it","time":{"start":1694777798158,"stop":1694777813487,"duration":15329},"status":"unknown","severity":"normal"}]
