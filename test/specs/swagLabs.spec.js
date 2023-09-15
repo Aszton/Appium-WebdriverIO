@@ -9,7 +9,4 @@ describe("Swag Labs tests", () => {
     await Action.click(sauceLabsSelectors.buttonLogin);
     await driver.pause(1000);
   });
-  afterEach(async () => {
-    await driver.closeApp();
-  });
 });

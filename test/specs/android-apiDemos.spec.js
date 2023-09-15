@@ -10,7 +10,4 @@ describe("API Demos test", () => {
     await Action.click(selectorsForApiDemos.addButton);
     await Action.click(selectorsForApiDemos.addButton);
   });
-  afterEach(async () => {
-    await driver.closeApp();
-  });
 });

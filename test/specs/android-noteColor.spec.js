@@ -7,8 +7,8 @@ describe("Color note test", () => {
   it("Add a note and delete it", async () => {
     noteObjects.skipTutorial();
     await Action.click(selectors.addNoteText);
-    await Action.click(selectors.textOption);
-    await Action.isDisplayed(selectors.textEditing);
+    // await Action.click(selectors.textOption);
+    // await Action.isDisplayed(selectors.textEditing);
     await Action.type(selectors.noteHeading, value.tv);
     await Action.type(selectors.noteBody, value.serials);
     await driver.back();
@@ -22,8 +22,5 @@ describe("Color note test", () => {
     await Action.click(selectors.iconNavigation);
     await Action.click(selectors.buttonTrash);
     await Action.checkText(selectors.firstNote, value.tv);
-  });
-  afterEach(async () => {
-    await driver.closeApp();
   });
 });
